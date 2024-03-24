@@ -1,0 +1,11 @@
+package hotelfollowers;
+
+public class Register {
+	
+	public static void main(String[] args) {
+		
+		Hotel hotelFollowers = new Hotel();
+		System.out.println(hotelFollowers.hotelRooms.size());
+	}
+
+}

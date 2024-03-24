@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\admiin\Documents\Proyectos\UdeA\Sem 2024-1\Tecnicas de programación\Taller POO\.metadata\.plugins\org.eclipse.jdt.core
+1782097720.index
+3138914536.index
+1865797976.index

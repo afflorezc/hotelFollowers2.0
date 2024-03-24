@@ -1,0 +1,30 @@
+package client;
+
+import java.util.Date;
+import java.util.ArrayList;
+import hotelfollowers.Room;
+
+public class Booking {
+	
+	Date entryDate;
+	Date exitDate;
+	float lodgingCost;
+	ArrayList<Room> reservedRooms;
+	
+	public Booking() {
+
+	}
+
+	public Booking(Date entryDate, Date exitDate, ArrayList<Room> reservedRooms) {
+		
+		this.entryDate = entryDate;
+		this.exitDate = exitDate;
+		this.reservedRooms = reservedRooms;
+	}
+	
+	
+	
+	
+		
+
+}

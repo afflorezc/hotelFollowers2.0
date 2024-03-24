@@ -1,0 +1,14 @@
+package client;
+
+import java.util.Date;
+import java.util.ArrayList;
+import hotelfollowers.Room;
+
+public class Booking {
+	
+	Date entryDate;
+	Date exitDate;
+	ArrayList<Room> reservedRooms;
+	
+
+}

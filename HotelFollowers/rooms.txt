@@ -1,0 +1,450 @@
+number: 101
+type: Individual
+status: Disponible
+cost: 100
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 102
+type: Individual
+status: Disponible
+cost: 90
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 103
+type: Individual
+status: Disponible
+cost: 120
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 104
+type: Individual
+status: Disponible
+cost: 110
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 105
+type: Individual
+status: Disponible
+cost: 140
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño  y jacuzzi, agua caliente, minibar, televisor
+-
+number: 106
+type: Doble
+status: Disponible
+cost: 120
+specs: Cama Doble 1.60m, cuatro toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 107
+type: Doble
+status: Disponible
+cost: 130
+specs: Cama Doble 1.60m, cuatro toallas, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 108
+type: Doble
+status: Disponible
+cost: 85
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 109
+type: Doble
+status: Disponible
+cost: 95
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 110
+type: Familiar
+status: Disponible
+cost: 80
+specs: Dos camas dobles de 1.60m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 111
+type: Familiar
+status: Disponible
+cost: 90
+specs: Dos camas dobles de 1.60m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 112
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 113
+type: Familiar
+status: Disponible
+cost: 95
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 114
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos tarimas de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 115
+type: Familiar
+status: Disponible
+cost: 80
+specs: tres camarotes de 1.20m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 201
+type: Individual
+status: Disponible
+cost: 100
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 202
+type: Individual
+status: Disponible
+cost: 90
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 203
+type: Individual
+status: Disponible
+cost: 120
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 204
+type: Individual
+status: Disponible
+cost: 110
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 205
+type: Individual
+status: Disponible
+cost: 140
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño  y jacuzzi, agua caliente, minibar, televisor
+-
+number: 206
+type: Doble
+status: Disponible
+cost: 120
+specs: Cama Doble 1.60m, cuatro toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 207
+type: Doble
+status: Disponible
+cost: 130
+specs: Cama Doble 1.60m, cuatro toallas, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 208
+type: Doble
+status: Disponible
+cost: 85
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 209
+type: Doble
+status: Disponible
+cost: 95
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 210
+type: Familiar
+status: Disponible
+cost: 80
+specs: Dos camas dobles de 1.60m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 211
+type: Familiar
+status: Disponible
+cost: 90
+specs: Dos camas dobles de 1.60m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 212
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 213
+type: Familiar
+status: Disponible
+cost: 95
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 214
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos tarimas de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 215
+type: Familiar
+status: Disponible
+cost: 80
+specs: tres camarotes de 1.20m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 301
+type: Individual
+status: Disponible
+cost: 100
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 302
+type: Individual
+status: Disponible
+cost: 90
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 303
+type: Individual
+status: Disponible
+cost: 120
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 304
+type: Individual
+status: Disponible
+cost: 110
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 305
+type: Individual
+status: Disponible
+cost: 140
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño  y jacuzzi, agua caliente, minibar, televisor
+-
+number: 306
+type: Doble
+status: Disponible
+cost: 120
+specs: Cama Doble 1.60m, cuatro toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 307
+type: Doble
+status: Disponible
+cost: 130
+specs: Cama Doble 1.60m, cuatro toallas, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 308
+type: Doble
+status: Disponible
+cost: 85
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 309
+type: Doble
+status: Disponible
+cost: 95
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 310
+type: Familiar
+status: Disponible
+cost: 80
+specs: Dos camas dobles de 1.60m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 311
+type: Familiar
+status: Disponible
+cost: 90
+specs: Dos camas dobles de 1.60m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 312
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 313
+type: Familiar
+status: Disponible
+cost: 95
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 314
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos tarimas de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 315
+type: Familiar
+status: Disponible
+cost: 80
+specs: tres camarotes de 1.20m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 401
+type: Individual
+status: Disponible
+cost: 100
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 402
+type: Individual
+status: Disponible
+cost: 90
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 403
+type: Individual
+status: Disponible
+cost: 120
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 404
+type: Individual
+status: Disponible
+cost: 110
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 405
+type: Individual
+status: Disponible
+cost: 140
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño  y jacuzzi, agua caliente, minibar, televisor
+-
+number: 406
+type: Doble
+status: Disponible
+cost: 120
+specs: Cama Doble 1.60m, cuatro toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 407
+type: Doble
+status: Disponible
+cost: 130
+specs: Cama Doble 1.60m, cuatro toallas, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 408
+type: Doble
+status: Disponible
+cost: 85
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 409
+type: Doble
+status: Disponible
+cost: 95
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 410
+type: Familiar
+status: Disponible
+cost: 80
+specs: Dos camas dobles de 1.60m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 411
+type: Familiar
+status: Disponible
+cost: 90
+specs: Dos camas dobles de 1.60m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 412
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 413
+type: Familiar
+status: Disponible
+cost: 95
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 414
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos tarimas de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 415
+type: Familiar
+status: Disponible
+cost: 80
+specs: tres camarotes de 1.20m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 501
+type: Individual
+status: Disponible
+cost: 100
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 502
+type: Individual
+status: Disponible
+cost: 90
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 503
+type: Individual
+status: Disponible
+cost: 120
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 504
+type: Individual
+status: Disponible
+cost: 110
+specs: Cama sencilla 1.20m, una toalla, vista trasera, aire acondicionado, baño con bañera, agua caliente, minibar, televisor
+-
+number: 505
+type: Individual
+status: Disponible
+cost: 140
+specs: Cama sencilla 1.20m, dos toallas, vista al mar, aire acondicionado, baño  y jacuzzi, agua caliente, minibar, televisor
+-
+number: 506
+type: Doble
+status: Disponible
+cost: 120
+specs: Cama Doble 1.60m, cuatro toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 507
+type: Doble
+status: Disponible
+cost: 130
+specs: Cama Doble 1.60m, cuatro toallas, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 508
+type: Doble
+status: Disponible
+cost: 85
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista trasera, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 509
+type: Doble
+status: Disponible
+cost: 95
+specs: Dos camas sencillas de 1.20m, cuatro toalla, vista al mar, aire acondicionado, baño sencillo, agua caliente, minibar, televisor
+-
+number: 510
+type: Familiar
+status: Disponible
+cost: 80
+specs: Dos camas dobles de 1.60m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 511
+type: Familiar
+status: Disponible
+cost: 90
+specs: Dos camas dobles de 1.60m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 512
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 513
+type: Familiar
+status: Disponible
+cost: 95
+specs: Dos camarotes de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 514
+type: Familiar
+status: Disponible
+cost: 85
+specs: Dos tarimas de 1.20m, seis toalla, vista trasera, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-
+number: 515
+type: Familiar
+status: Disponible
+cost: 80
+specs: tres camarotes de 1.20m, seis toalla, vista al mar, aire acondicionado, baño y jacuzzi, agua caliente, minibar, televisor
+-

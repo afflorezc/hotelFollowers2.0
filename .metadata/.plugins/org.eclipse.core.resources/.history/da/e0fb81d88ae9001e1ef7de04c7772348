@@ -1,0 +1,29 @@
+package hotelfollowers;
+
+import java.util.ArrayList;
+
+public class Register {
+	
+	public static void main(String[] args) {
+		
+		Hotel hotelFollowers = new Hotel();
+		ArrayList<Room> hotelRooms = hotelFollowers.getHotelRooms();
+		System.out.println(hotelRooms.size());
+		
+		try {
+			
+			int num = Integer.parseInt("04");
+			System.out.println(num);
+			
+		} catch(NumberFormatException e) {
+			System.out.println("Houston tenemos un problema");
+		}
+		
+		for(Room room:hotelRooms) {
+			
+			System.out.println(room);
+		}
+		
+	}
+
+}

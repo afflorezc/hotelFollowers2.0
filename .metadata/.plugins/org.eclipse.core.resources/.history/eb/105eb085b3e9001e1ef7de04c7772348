@@ -1,0 +1,309 @@
+package hotelfollowers;
+
+import reading.Reader;
+import datemanagment.DateManagment;
+
+import java.util.Date;
+
+import java.util.ArrayList;
+import java.io.*;
+import client.*;
+
+public class Hotel {
+	
+	private static final String ROOMS_FILE = "rooms.txt";
+	private static Reader reader = new Reader();
+	private static DateManagment datemanager = new DateManagment();
+	
+	private ArrayList<Room> individualRooms;
+	private ArrayList<Room> doubleRooms;
+	private ArrayList<Room> familiarRooms;
+	private ArrayList<Client> clients;
+	
+	public Hotel() {
+		
+		individualRooms = new ArrayList<Room>();
+		doubleRooms = new ArrayList<Room>();
+		familiarRooms = new ArrayList<Room>();
+		uploadRooms();
+		
+	}
+
+	public ArrayList<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(ArrayList<Client> clients) {
+		this.clients = clients;
+	}
+
+	public String readInfo(BufferedReader buffer) {
+		
+		String line;
+		try {
+			line = buffer.readLine();
+			return line.substring(line.indexOf(":")+2);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			return "";
+		}
+		
+	}
+	
+	public void uploadRooms() {
+		
+		String pathName = new File("").getAbsolutePath() +"\\";
+		pathName += ROOMS_FILE;
+		System.out.println(pathName);
+		
+		try {
+			FileReader fReader = new FileReader(new File(pathName));
+			BufferedReader buffer = new BufferedReader(fReader);
+			String line = " ";
+			
+			while(line != null) {
+				
+				short roomNo = Short.parseShort(readInfo(buffer));
+				String type = readInfo(buffer);
+				String status = readInfo(buffer);
+				float cost = Float.parseFloat(readInfo(buffer));
+				String specs = readInfo(buffer);
+				boolean availability = false;
+				if(status.equals("Disponible")) {
+					availability = true;
+				}
+				
+				readInfo(buffer);
+				
+				switch(type) {
+					case "Individual" -> individualRooms.add(new Room(type, roomNo, availability, cost, specs));
+					case "Doble" -> doubleRooms.add(new Room(type, roomNo, availability, cost, specs));
+					case "Familiar" -> familiarRooms.add(new Room(type, roomNo, availability, cost, specs));
+				}
+				
+			}	
+		} catch(Exception e) {
+			//System.out.println("End of file");
+			return;
+		}
+	}
+	
+	public void clientRegister() {
+		
+		System.out.println("Ingrese por favor el número de clientes que desea registrar:");
+		
+		int numberOfClients = reader.readPosInt("Valor no válido", "El número de clientes a registrar debe ser un entero positivo");
+		
+		for(int i=0;i<numberOfClients;i++) {
+			
+			if(i==0) {
+				
+				addClient(true);
+			} else {
+				addClient(false);
+			}
+		}
+	}
+	
+	public void addClient(boolean isPrincipal) {
+		
+		
+		String id = reader.validateOnlyNumeric("Ingrese por favor el documento de identidad del cliente:", "Documento no valido",
+				                               "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		String name = reader.validateOnlyText("Ingrese por favor el nombre del cliente", "Nombre no valido",
+                "No incluya caracteres numéricos o del tipo *, +, /, -");
+		
+		String address = reader.readString("Ingrese por favor la dirección del cliente");
+		
+		String phoneNo = reader.validateOnlyNumeric("Ingrese por favor el numéro de telefono del cliente:", "Número de telefono no valido",
+                                "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		
+		if(isPrincipal) {
+			
+			clients.add(new PrincipalClient(name, id, address, phoneNo));
+		} else {
+			
+			clients.add(new CompanionClient(name, id, address, phoneNo));
+		}
+		
+	}
+	
+	public void doReservation() {
+		
+		System.out.println("Ingrese por favor el número total de personas con las que se hospeadará el cliente");
+		
+		int totalClients = reader.readPosInt("Valor no válido","El numero de clientes debe ser entero y positivo");
+		
+		if(totalClients == 1) {
+			
+			showAvailableRooms("Individual");
+			
+		} else if(totalClients == 2) {
+			
+			showAvailableRooms("Individual","Doble");
+			
+		} else {
+			
+			showAvailableRooms("Individual", "Doble", "Familiar");
+		}
+		
+		
+		Date entryDate = datemanager.readAndValidateDate("Ingrese por favor la fecha en la cual se hospedará el cliente", 
+				                             "La fecha de ingreso no puede ser anterior a la fecha actual", new Date()); 
+		
+		Date exitDate = datemanager.readAndValidateDate("Ingrese por favor la fecha hasta la cual se hospedará el cliente", 
+				                       "La fecha de salida debe ser una fecha posterior a la fecha de ingreso", entryDate);
+		
+		
+		
+	}
+	
+	public void showAvailableRooms(String ... types) {
+		
+		for(String type:types) {
+			
+			showSpecs("Individual");
+			listAvailableRooms(type);
+			switch(type) {
+			
+				case "Individual":
+					showSpecs("Individual");
+					listAvailableRooms(type);
+					break;
+				case "Doble":
+					showSpecs("Doble");
+					break;
+				case "Familiar":
+					showSpecs("Familiar");
+					break;
+			}
+			
+		}
+		
+	}
+	
+	public void showSpecs(String type) {
+		
+		int i = 1;
+		switch(type) {
+			case "Individual":
+				
+				for(Room room:individualRooms) {
+					System.out.println("A continuación se muestran los diferentes tipos de comodidades"
+					                        +" de las habitaciones individuales \n");
+					
+					System.out.print(i+  "\t");
+					room.showSpecs();
+					i++;
+					if(i == 6) break;
+				}
+				
+				break;
+				
+			case "Doble":
+				
+				for(Room room:doubleRooms) {
+					System.out.println("A continuación se muestran los diferentes tipos de comodidades"
+					                        +" de las habitaciones dobles \n");
+					
+					System.out.print(i+  "\t");
+					room.showSpecs();
+					i++;
+					if(i == 5) break;
+				}
+				
+				break;
+			case "Familiar":
+				
+				for(Room room:familiarRooms) {
+					System.out.println("A continuación se muestran los diferentes tipos de comodidades"
+					                        +" de las habitaciones dobles \n");
+					
+					System.out.print(i+  "\t");
+					room.showSpecs();
+					i++;
+					if(i == 7) break;
+				}
+				
+				break;
+		}
+	}
+	
+	public void listAvailableRooms(String type) {
+		
+		String[] options;
+		
+		switch(type) {
+		
+			case "Individual":
+				
+				options = new String[5];
+				
+				for(Room room:individualRooms) {
+					int num = room.getRoomNo();
+					int index = num % 5;
+					if(room.isAvailable()) {
+						options[index] += num;
+					}
+				}
+				
+				break;
+				
+			case "Doble":
+				
+				options = new String[4];
+				
+				for(Room room:doubleRooms) {
+					int num = room.getRoomNo();
+					int index = (num-5) % 4;
+					if(room.isAvailable()) {
+						options[index] += num;
+					}
+				}
+				
+				break;
+				
+			case "Familiar":
+				
+				options = new String[6];
+				
+				for(Room room:familiarRooms) {
+					int num = room.getRoomNo();
+					int index = (num-9) % 4;
+					if(room.isAvailable()) {
+						options[index] += num;
+					}
+				}
+				break;
+				
+			default:
+				options = new String[0];
+					
+		}
+		
+		showList(options);
+	}
+	
+	public void showList(String[] options) {
+		
+		int op =0;
+		for(int i=1; i <options.length; i++) {
+			
+			op = i+1;
+			System.out.println("Habitaciones disponibles con comodidades descritas en " + op +": \n");
+			System.out.println(options[i]);
+		}
+		
+		op = options.length;
+		System.out.println("Habitaciones disponibles con comodidades descritas en " + op +": \n");
+		System.out.println(options[0]);
+		
+	}
+	
+	
+	
+
+}

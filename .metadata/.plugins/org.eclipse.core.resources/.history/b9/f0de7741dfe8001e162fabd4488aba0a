@@ -1,0 +1,77 @@
+package hotelfollowers;
+
+import java.util.ArrayList;
+import java.io.*;
+import client.*;
+
+public class Hotel {
+	
+	private static final String ROOMS_FILE = "rooms.txt";
+	ArrayList<Room> hotelRooms;
+	ArrayList<Client> clients;
+	
+	public Hotel() {
+		
+		uploadRooms();
+		
+	}
+	
+	public String readInfo(BufferedReader buffer) {
+		
+		String line;
+		try {
+			line = buffer.readLine();
+			System.out.println(line);
+			return line.substring(line.indexOf(":")+2);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			return "";
+		}
+		
+	}
+	
+	public void uploadRooms() {
+		
+		String pathName = new File("").getAbsolutePath() +"\\";
+		pathName += ROOMS_FILE;
+		System.out.println(pathName);
+		
+		try {
+			FileReader fReader = new FileReader(new File(pathName));
+			BufferedReader buffer = new BufferedReader(fReader);
+			String line = " ";
+			
+			while(line != null) {
+				
+				
+				
+				short roomNo = Short.parseShort(readInfo(buffer));
+				String type = readInfo(buffer);
+				String status = readInfo(buffer);
+				float cost = Float.parseFloat(readInfo(buffer));
+				String specs = readInfo(buffer);
+				boolean availability = false;
+				if(status.equals("Disponible")) {
+					availability = true;
+				}
+				
+				String separator = readInfo(buffer);
+				System.out.println(separator);
+				
+				hotelRooms.add(new Room(type, roomNo, availability, cost, specs));
+				
+				line = buffer.readLine();
+			}
+			
+			
+		} catch(Exception e) {
+			System.out.println("Falló lectura archivo");
+			return;
+		}
+		
+		
+		
+	}
+
+}

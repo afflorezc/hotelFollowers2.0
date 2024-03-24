@@ -1,0 +1,49 @@
+package hotelfollowers;
+
+import reading.Reader;
+
+//import java.util.ArrayList;
+
+public class Register {
+	
+	private static Reader reader = new Reader();
+	private static Hotel hotelFollowers;
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Bienvenido al Hotel Followers!! \n"
+				         + "Somos expertos en la mejor atención y servicio de hospedaje.");
+		hotelFollowers = new Hotel();
+		int menuChoice = 0;
+		do {
+			menuChoice = getMenuChoice();
+			executeChoice(menuChoice);
+		} while(menuChoice != 3);
+		
+		
+	}
+	
+	public static String showMenu() {
+		
+		return "Seleccione la opción de acerdo a sus necesidades: \n \n"
+				+ "1. Registrar clientes \n"
+				+ "2. Realizar una reserva \n"
+				+ "3. Salir \n";
+	}
+	
+	public static int getMenuChoice() {
+		
+		System.out.println(showMenu());
+		return reader.readIntRange(1, 3, "Selección no válida", "Ingrese el número adecuado a la opción dada \n" +showMenu());
+	}
+	
+	public static void executeChoice(int menuChoice) {
+		
+		switch(menuChoice) {
+		
+			case 1 -> hotelFollowers.clientRegister();
+			case 2 -> hotelFollowers.doReservation();
+		}
+	}
+
+}

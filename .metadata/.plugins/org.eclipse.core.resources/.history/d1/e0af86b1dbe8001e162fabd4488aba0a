@@ -1,0 +1,22 @@
+package hotelfollowers;
+
+import java.util.ArrayList;
+import client.*;
+
+public class Hotel {
+	
+	private static final String ROOMS_FILE = "rooms.txt";
+	ArrayList<Room> hotelRooms;
+	ArrayList<Client> clients;
+	
+	public Hotel() {
+		
+	}
+	
+	public void uploadRooms() {
+		
+		
+		
+	}
+
+}

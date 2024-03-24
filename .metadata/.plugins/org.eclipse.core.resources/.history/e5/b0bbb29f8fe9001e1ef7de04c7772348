@@ -1,0 +1,128 @@
+package hotelfollowers;
+
+import reading.Reader;
+
+import java.util.Date;
+
+import java.util.ArrayList;
+import java.io.*;
+import client.*;
+
+public class Hotel {
+	
+	private static final String ROOMS_FILE = "rooms.txt";
+	private static Reader reader = new Reader();
+	
+	private ArrayList<Room> hotelRooms;
+	private ArrayList<Client> clients;
+	
+	public Hotel() {
+		
+		hotelRooms = new ArrayList<Room>();
+		uploadRooms();
+		
+	}
+	
+	
+	public ArrayList<Room> getHotelRooms() {
+		return hotelRooms;
+	}
+
+	public ArrayList<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(ArrayList<Client> clients) {
+		this.clients = clients;
+	}
+
+	public String readInfo(BufferedReader buffer) {
+		
+		String line;
+		try {
+			line = buffer.readLine();
+			return line.substring(line.indexOf(":")+2);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			return "";
+		}
+		
+	}
+	
+	public void uploadRooms() {
+		
+		String pathName = new File("").getAbsolutePath() +"\\";
+		pathName += ROOMS_FILE;
+		System.out.println(pathName);
+		
+		try {
+			FileReader fReader = new FileReader(new File(pathName));
+			BufferedReader buffer = new BufferedReader(fReader);
+			String line = " ";
+			
+			while(line != null) {
+				
+				short roomNo = Short.parseShort(readInfo(buffer));
+				String type = readInfo(buffer);
+				String status = readInfo(buffer);
+				float cost = Float.parseFloat(readInfo(buffer));
+				String specs = readInfo(buffer);
+				boolean availability = false;
+				if(status.equals("Disponible")) {
+					availability = true;
+				}
+				
+				readInfo(buffer);
+				
+				hotelRooms.add(new Room(type, roomNo, availability, cost, specs));
+			}	
+		} catch(Exception e) {
+			System.out.println("End of file");
+			return;
+		}
+	}
+	
+	public void addClient(boolean reservation) {
+		
+		String name = reader.validateOnlyText("Ingrese por favor el nombre del cliente", "Nombre no valido",
+				                   "No incluya caracteres numéricos o del tipo *, +, /, -");
+		
+		String id = reader.validateOnlyNumeric("Ingrese por favor el documento de identidad del cliente:", "Documento no valido",
+				                               "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		String address = reader.readString("Ingrese por favor la dirección del cliente");
+		
+		String phoneNo = reader.validateOnlyNumeric("Ingrese por favor el numéro de telefono del cliente:", "Número de telefono no valido",
+                                "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		Date entryDate;
+		boolean lodged = false;
+		
+		if(!reservation) {
+			entryDate = new Date();
+			lodged = true;
+			
+		} else {
+			entryDate = reader.readDate("Ingrese por favor la fecha en la que se alojará el cliente", "Fecha invalida");
+		}
+		
+		/*do {
+			
+			Date exitDate = reader.readDate("Ingrese por favor la fecha hasta la cual se hospedará el cliente", "Fecha invalida");
+			if(exitDate.compareTo(exitDate) > 0)
+		}while(true);
+		
+		
+		
+		clients.add(new Client(name, id, address, phoneNo, entryDate, exitDate, lodged));*/
+		
+	}
+	
+	public void doReservation() {
+		
+	}
+	
+	
+
+}

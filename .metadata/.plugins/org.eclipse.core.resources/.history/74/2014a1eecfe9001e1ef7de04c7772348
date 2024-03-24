@@ -1,0 +1,25 @@
+package datemanagment;
+
+import reading.Reader;
+
+import java.util.Date;
+
+public class DateManagment {
+	
+	private static Reader reader = new Reader();
+	
+	public Date readAndValidateDate(String inputMessage, String errorMessage, Date comparisonDate) {
+		
+		Date date;
+		
+		do {
+			date = reader.readDate(inputMessage, "Fecha invalida");
+			if(date.compareTo(comparisonDate) <= 0) {
+				System.out.println(errorMessage);
+				}
+		} while(date.compareTo(comparisonDate) <=0);
+		
+		return date;
+	}
+
+}

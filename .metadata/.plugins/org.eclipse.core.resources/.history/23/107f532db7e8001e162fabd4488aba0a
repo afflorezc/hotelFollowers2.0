@@ -1,0 +1,100 @@
+package client;
+
+import java.util.Date;
+
+public class Client {
+	
+	private static int counter;
+	
+	private String name;
+	private String id;
+	private String address;
+	private String phoneNo;
+	private Date entryDate;
+	private Date exitDate;
+	private boolean lodged;
+	
+	public Client() {
+		counter++;
+	}
+
+	public Client(String name, String id, String address, String phoneNo, Date entryDate, Date exitDate, boolean lodged) {
+		
+		this.name = name;
+		this.id = id;
+		this.address = address;
+		this.phoneNo = phoneNo;
+		this.entryDate = entryDate;
+		this.exitDate = exitDate;
+		this.lodged = lodged;
+		counter++;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public Date getEntryDate() {
+		return entryDate;
+	}
+
+	public void setEntryDate(Date entryDate) {
+		this.entryDate = entryDate;
+	}
+
+	public Date getExitDate() {
+		return exitDate;
+	}
+
+	public void setExitDate(Date exitDate) {
+		this.exitDate = exitDate;
+	}
+
+	@Override
+	public String toString() {
+		
+		String info =  "Client N° " + counter + ":\n"
+				+ "name        : " + name + "\n" 
+				+ "id          : " + id + "\n" 
+				+ "address     : " + address + "\n"
+				+ "phone number: " + phoneNo + "\n" 
+				+ "entry Date  : " + entryDate;
+		
+		if(!lodged) {
+			info += "exit Date   : " + exitDate;
+		} else {
+			info += "contract End: " + exitDate;
+		}
+		
+		return info;
+	}
+
+}

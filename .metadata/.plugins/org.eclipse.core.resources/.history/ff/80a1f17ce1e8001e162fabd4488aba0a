@@ -1,0 +1,116 @@
+package reading;
+
+import java.util.Scanner;
+
+public class Reader {
+    
+    Scanner sc = new Scanner(System.in);
+    
+    public int readInt(String message, String errorMessage, String inErrorMessage){
+        System.out.println(message + ": ");
+        validateInt(errorMessage, inErrorMessage);
+        int value = sc.nextInt();
+        return value;
+    }
+
+    public double readDouble(String message, String errorMessage, String suggestionMessage){
+        System.out.println(message + ": ");
+        validateDouble(errorMessage, suggestionMessage);
+        double dato = sc.nextDouble();
+        return dato;
+    }
+    
+    
+
+    public float readFloat(String message, String errorMessage, String suggestionMessage){
+        System.out.println(message + ": ");
+        validateFloat(errorMessage, suggestionMessage);
+        float dato = sc.nextFloat();
+        return dato;
+    }
+    
+    public float readPosFloat(String errorMessage,
+            String suggestionMessage) {
+    	
+    	float number = 0;
+    	do {
+
+    	validateFloat(errorMessage, suggestionMessage);
+    	number = sc.nextFloat();
+
+    	} while (number <= 0);
+
+    	return number;
+    }
+    
+    public float readFloatRange(float start, float end, String errorMessage,
+            String suggestionMessage) {
+    	float number = 0.0f;
+    	do {
+    			validateFloat(errorMessage, suggestionMessage);
+    			number = sc.nextFloat();
+
+    		} while (number < start && number > end );
+
+    	return number;
+    }
+    
+    public String readString(String message){
+        System.out.println(message +": ");
+        
+        return sc.nextLine();
+
+    }
+       
+    public void validateInt(String errorMessage, String suggestionMessage) {
+    	
+    	while (!sc.hasNextInt()) {
+            System.out.println(errorMessage);
+            System.out.println(suggestionMessage);
+            sc.next();
+        }
+    }
+    
+    public void validateFloat(String errorMessage, String suggestionMessage){
+        while (!sc.hasNextFloat()) {
+            System.out.println(errorMessage);
+            System.out.println(suggestionMessage);
+            sc.next();
+        }
+    }
+    
+    public void validateDouble(String errorMessage, String suggestionMessage){
+        while (!sc.hasNextDouble()) {
+            System.out.println(errorMessage);
+            System.out.println(suggestionMessage);
+            sc.next();
+        }
+    }
+    
+    public int readIntRange(int start, int end, String errorMessage,
+                           String suggestionMessage) {
+    	
+        int number = 0;
+        do {
+            
+            validateInt(errorMessage, suggestionMessage);
+            number = sc.nextInt();
+            
+        } while (number < start && number > end );
+
+        return number;
+    }
+    
+    public int readPosInt(String errorMessage,
+                           String suggestionMessage) {
+    	
+        int number = 0;
+        do {
+            validateInt(errorMessage, suggestionMessage);
+            number = sc.nextInt();
+            
+        } while (number <= 0);
+
+        return number;
+    }
+}

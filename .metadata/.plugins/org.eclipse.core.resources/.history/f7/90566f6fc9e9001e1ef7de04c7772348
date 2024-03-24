@@ -1,0 +1,53 @@
+package client;
+
+import java.util.ArrayList;
+//import java.util.Date;
+
+public class PrincipalClient extends Client {
+	
+	boolean reservation;	
+	private ArrayList<Client> guestList;
+	private ArrayList<Booking> bookings;
+
+	public PrincipalClient() {
+		super();
+	}
+
+	public PrincipalClient(String name, String id, String address, String phoneNo) {
+		
+		super(name, id, address, phoneNo);
+	}
+	
+	public boolean hasReservation() {
+		return reservation;
+	}
+
+	public void setReservation(boolean reservation) {
+		this.reservation = reservation;
+	}
+
+	public ArrayList<Client> getGuestList() {
+		return guestList;
+	}
+
+	public void setGuestList(ArrayList<Client> guestList) {
+		this.guestList = guestList;
+	}
+	
+	public void makeBook(Booking booking) {
+		
+		this.bookings.add(booking);
+		// Billing
+		booking.getLodgingCost();
+		
+	}
+	
+	public void modifyBook(Booking oldBooking, Booking newBooking) {
+		
+		if(this.bookings.contains(oldBooking)) {
+			this.bookings.remove(oldBooking);
+			this.bookings.add(newBooking);
+		}
+	}
+	
+}

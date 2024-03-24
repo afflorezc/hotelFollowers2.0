@@ -1,0 +1,116 @@
+package hotelfollowers;
+
+import reading.Reader;
+
+import java.util.Date;
+
+import java.util.ArrayList;
+import java.io.*;
+import client.*;
+
+public class Hotel {
+	
+	private static final String ROOMS_FILE = "rooms.txt";
+	private static Reader reader = new Reader();
+	
+	private ArrayList<Room> hotelRooms;
+	private ArrayList<Client> clients;
+	
+	public Hotel() {
+		
+		hotelRooms = new ArrayList<Room>();
+		uploadRooms();
+		
+	}
+	
+	
+	public ArrayList<Room> getHotelRooms() {
+		return hotelRooms;
+	}
+
+	public ArrayList<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(ArrayList<Client> clients) {
+		this.clients = clients;
+	}
+
+	public String readInfo(BufferedReader buffer) {
+		
+		String line;
+		try {
+			line = buffer.readLine();
+			return line.substring(line.indexOf(":")+2);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			return "";
+		}
+		
+	}
+	
+	public void uploadRooms() {
+		
+		String pathName = new File("").getAbsolutePath() +"\\";
+		pathName += ROOMS_FILE;
+		System.out.println(pathName);
+		
+		try {
+			FileReader fReader = new FileReader(new File(pathName));
+			BufferedReader buffer = new BufferedReader(fReader);
+			String line = " ";
+			
+			while(line != null) {
+				
+				short roomNo = Short.parseShort(readInfo(buffer));
+				String type = readInfo(buffer);
+				String status = readInfo(buffer);
+				float cost = Float.parseFloat(readInfo(buffer));
+				String specs = readInfo(buffer);
+				boolean availability = false;
+				if(status.equals("Disponible")) {
+					availability = true;
+				}
+				
+				readInfo(buffer);
+				
+				hotelRooms.add(new Room(type, roomNo, availability, cost, specs));
+			}	
+		} catch(Exception e) {
+			System.out.println("End of file");
+			return;
+		}
+	}
+	
+	public void addClient() {
+		
+		String name = reader.validateOnlyText("Ingrese el nombre del cliente", "Nombre no valido",
+				                   "No incluya caracteres numéricos o del tipo *, +, /, -");
+		
+		String id = reader.validateOnlyNumeric("Ingrese el documento de identidad del cliente:", "Documento no valido",
+				                               "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		String address = reader.readString("Ingrese por favor la dirección del cliente");
+		
+		String phoneNo = reader.validateOnlyNumeric("Ingrese el numéro de telefono del cliente:", "Número de telefono no valido",
+                                "Ingrese solo el número del documento sin espacios comas o guiones");
+		
+		String answer = reader.readAnswer("¿Es la fecha actual la misma fecha en la que se alojará el cliente en el hotel? \n"
+				                           + "Responda con: si/no", "si", "no", "Responda escribiendo unicamente las palabras si o no");
+		
+		Date entryDate;
+		if(answer.equals("si")) {
+			entryDate = new Date();
+		} else {
+			
+			String enDate = reader.readString("Ingrese por favor la fecha en la cual se hospedará el cliente: "
+                                             + "use el formato dd/mm/aaaa");
+		}
+		
+		String exitDate = reader.readString("Ingrese por favor la fecha hasta la cual se hospedará el cliente");
+		
+	}
+	
+
+}

@@ -1,0 +1,28 @@
+package hotelfollowers;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class Register {
+	
+	public static void main(String[] args) {
+		
+		Hotel hotelFollowers = new Hotel();
+		ArrayList<Room> hotelRooms = hotelFollowers.getHotelRooms();
+		System.out.println(hotelRooms.size());
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+    		
+    		Date date1 = format.parse("24/03/2024");
+    		Date date2 = format.parse("26/03/2024");
+    		System.out.println(date1.compareTo(date2));
+    		
+    	} catch(ParseException e) {
+    		System.out.println("No se pudo establecer la fecha dada");
+    	}
+	}
+
+}

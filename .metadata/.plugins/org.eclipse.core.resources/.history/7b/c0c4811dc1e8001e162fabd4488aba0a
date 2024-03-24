@@ -1,0 +1,99 @@
+package hotelfollowers;
+
+import client.*;
+import java.util.ArrayList;
+
+public class Room {
+	
+	String type;
+	int roomNo;
+	boolean available;
+	float cost;
+	short maxOccupancy;
+	String specs;
+	ArrayList<Client> guests;
+	
+	public Room() {
+	
+	}
+
+	public Room(String type, int roomNo, boolean status, float cost, String specs) {
+	
+		this.type = type;
+		this.roomNo = roomNo;
+		this.available = status;
+		this.cost = cost;
+		this.specs = specs;
+		this.setMaxOccupancy();
+		
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getRoomNo() {
+		return roomNo;
+	}
+
+	public void setRoomNo(int roomNo) {
+		this.roomNo = roomNo;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setStatus(boolean status) {
+		this.available = status;
+	}
+
+	public float getCost() {
+		return cost;
+	}
+
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+
+	public String getSpecs() {
+		return specs;
+	}
+
+	public void setSpecs(String specs) {
+		this.specs = specs;
+	}
+
+	public short getMaxOccupancy() {
+		return maxOccupancy;
+	}
+
+	public void setMaxOccupancy() {
+		
+		switch(this.type) {
+		
+			case "Individual" -> this.maxOccupancy = 1;
+			case "Doble" -> this.maxOccupancy = 2;
+			case "Familiar" -> this.maxOccupancy = 6;
+		}
+	}
+
+	public ArrayList<Client> getGuests() {
+		return guests;
+	}
+
+	public void addGuest(Client guest) {
+		this.guests.add(guest);
+	}
+	
+	
+	
+	
+	
+	
+
+}

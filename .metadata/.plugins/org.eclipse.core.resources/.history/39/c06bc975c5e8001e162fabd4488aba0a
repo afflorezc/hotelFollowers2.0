@@ -1,0 +1,25 @@
+package client;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class PrincipalClient extends Client {
+	
+	ArrayList<Client> guestList;
+
+	public PrincipalClient() {
+		super();
+	}
+
+	public PrincipalClient(String name, String id, String address, String phoneNo, Date entryDate, Date exitDate, 
+			                 boolean lodged, ArrayList<Client> guestList) {
+		
+		super(name, id, address, phoneNo, entryDate, exitDate, lodged);
+		this.guestList = guestList;
+	}
+	
+	
+	
+	
+	
+}

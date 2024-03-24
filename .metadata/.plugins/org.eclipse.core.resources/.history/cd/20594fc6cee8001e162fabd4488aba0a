@@ -1,0 +1,78 @@
+package client;
+
+import java.util.Date;
+import java.util.ArrayList;
+import hotelfollowers.Room;
+
+public class Booking {
+	
+	private Date entryDate;
+	private Date exitDate;
+	private float lodgingCost;
+	private ArrayList<Room> reservedRooms;
+	
+	public Booking() {
+
+	}
+
+	public Booking(Date entryDate, Date exitDate, ArrayList<Room> reservedRooms) {
+		
+		this.entryDate = entryDate;
+		this.exitDate = exitDate;
+		this.reservedRooms = reservedRooms;
+	}
+
+	public Date getEntryDate() {
+		return entryDate;
+	}
+
+	public void setEntryDate(Date entryDate) {
+		this.entryDate = entryDate;
+	}
+
+	public Date getExitDate() {
+		return exitDate;
+	}
+
+	public void setExitDate(Date exitDate) {
+		this.exitDate = exitDate;
+	}
+
+	public float getLodgingCost() {
+		return lodgingCost;
+	}
+
+	public void setLodgingCost(float lodgingCost) {
+		this.lodgingCost = lodgingCost;
+	}
+
+	public ArrayList<Room> getReservedRooms() {
+		return reservedRooms;
+	}
+
+	public void setReservedRooms(ArrayList<Room> reservedRooms) {
+		this.reservedRooms = reservedRooms;
+	}
+	
+	public void calculateCost() {
+		
+		lodgingCost = 0.0f;
+		
+		for(Room room: reservedRooms) {
+			
+			float reservedOccupancy = (float) room.getReservedOccupancy();
+			float minOccupancy = room.getMinOccupancy();
+			float cost = room.getCost();
+			if(reservedOccupancy < minOccupancy ) {
+				lodgingCost += minOccupancy*cost;
+			} else {
+				lodgingCost += reservedOccupancy*cost;
+			}
+		}
+	}
+	
+	
+	
+		
+
+}
